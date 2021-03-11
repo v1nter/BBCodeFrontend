@@ -34,6 +34,7 @@ class FormGameDetailReleaseDate extends React.Component {
             onChange={this.onChange}
             value={this.defaultIfEmpty(release)}
             placeholder="Releasedatum"
+            autoComplete="off"
           />
         </FormGroup>
       </Form>

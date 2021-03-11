@@ -22,7 +22,7 @@ class Search extends Component {
               onChange={this.onChange}
               value={this.defaultIfEmpty(this.props.search)}
               placeholder="Suche"
-              autocomplete="off"
+              autoComplete="off"
             />
           </FormGroup>
         </Form>

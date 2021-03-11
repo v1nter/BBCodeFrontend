@@ -1,8 +1,13 @@
-// const result = require('dotenv').config()
-// console.log(result)
 
-//var api = "https://bbcodebackend.herokuapp.com"
-var api = "http://localhost:8000"
+
+
+var api = "https://bbcodebackend.herokuapp.com"
+
+if(process.env.REACT_APP_HOST === "LOCAL") {
+  var api = "http://localhost:8000"
+}
+
+
 
 // export const EVENT_URL = "http://localhost:8000/bbcapi/events/";
 // export const IMGUR_GET = "http://localhost:8000/bbcapi/imgurget/";

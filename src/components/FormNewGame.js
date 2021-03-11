@@ -59,6 +59,7 @@ class FormNewGame extends React.Component {
             value={this.defaultIfEmpty(this.state.game_name)}
             required
             placeholder="Name"
+            autoComplete="off"
           />
         </FormGroup>
 

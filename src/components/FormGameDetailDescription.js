@@ -34,6 +34,7 @@ class FormGameDetailDescription extends React.Component {
             onChange={this.onChange}
             value={this.defaultIfEmpty(description)}
             placeholder="Genre/Beschreibung"
+            autoComplete="off"
           />
         </FormGroup>
       </Form>
