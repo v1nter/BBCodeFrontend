@@ -30,8 +30,8 @@ class FormGameDetailKeyart extends React.Component {
         <Form>
           <FormGroup>
             <a href={label} target="_blank" rel="noreferrer">
+              <Label for="game_keyart">Keyart:</Label>
             </a>
-            <Label for="game_keyart">Keyart:</Label>
             <Input
               type="text"
               name="game_keyart"
