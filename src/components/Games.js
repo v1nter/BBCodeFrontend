@@ -29,7 +29,7 @@ class Games extends Component {
 
   onChangeSearch = e => {
     const search = e.target.value
-    this.setState({search: search})
+    this.setState({search: search}, this.getGames)
   }
 
   onSubmitSearchReset = e => {
