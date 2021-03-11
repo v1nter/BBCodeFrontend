@@ -110,24 +110,24 @@ class FormEditOrNewPlatform extends React.Component {
     */
       <Form onSubmit={this.props.platform ? this.editPlatform : this.createPlatform}>
         <FormGroup>
-          <Label for="platform_name">Name:</Label>
           <Input
             type="text"
             name="platform_name"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.platform_name)}
             required
+            placeholder="Name"
           />
         </FormGroup>
 
         <FormGroup>
-          <Label for="platform_image">Plattformbild:</Label>
           <Input
             type="text"
             name="platform_image"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.platform_image)}
             required
+            placeholder="URL Plattformlogo"
           />
         </FormGroup>
 

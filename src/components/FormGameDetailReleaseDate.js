@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, FormGroup, Input, Label } from "reactstrap";
+
 class FormGameDetailReleaseDate extends React.Component {
 
   onChange = e => {
@@ -32,6 +33,7 @@ class FormGameDetailReleaseDate extends React.Component {
             name="game_release_date"
             onChange={this.onChange}
             value={this.defaultIfEmpty(release)}
+            placeholder="Releasedatum"
           />
         </FormGroup>
       </Form>

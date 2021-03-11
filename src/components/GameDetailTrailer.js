@@ -71,9 +71,9 @@ class GameDetailTrailer extends Component {
                 <td>
                 <iframe
                   src={"https://www.youtube.com/embed/" + this.props.get_yt_code(trailer.trailer_url)}
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen="allowfullscreen" title={trailer.id}>
+                  allowFullScreen="allowFullScreen" title={trailer.id}>
                 </iframe>
                 </td>
                 <td>{trailer.trailer_name}</td>

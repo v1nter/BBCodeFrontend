@@ -11,16 +11,18 @@ class Header extends Component {
           <Container style={{ marginTop: "20px", marginBottom: "20px" }}>
             <div>
             <table style={{width: "100%", margintop: "50px"}}>
+              <thead>
                 <tr>
-                  <th colspan = "4" className="text-center">
+                  <th colSpan = "4" className="text-center">
                     <img src="/Icon.bmp" alt=""/><h1>BBCode Generator</h1>
                   </th>
                 </tr>
                 <tr>
-                  <th colspan = "4" className="text-center">
+                  <th colSpan = "4" className="text-center">
                     Hier kommt eine Searchbar hin
                   </th>
                 </tr>
+              </thead>
               <tbody>
                 <tr>
                   <td style={{width: "25%"}}>

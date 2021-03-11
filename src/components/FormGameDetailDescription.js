@@ -27,12 +27,13 @@ class FormGameDetailDescription extends React.Component {
 
       <Form>
         <FormGroup>
-          <Label for="game_description">Genre/Beschreibung:</Label>
+          <Label for="game_production">Genre/Beschreibung:</Label>
           <Input
             type="text"
             name="game_description"
             onChange={this.onChange}
             value={this.defaultIfEmpty(description)}
+            placeholder="Genre/Beschreibung"
           />
         </FormGroup>
       </Form>

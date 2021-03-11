@@ -190,7 +190,6 @@ class FormEditOrNewTrailer extends Component {
               <Row>
                 <Col>
                 <FormGroup>
-                  <Label for="trailer_name">Trailername:</Label>
                   <Input
                     type="text"
                     name="trailer_name"
@@ -198,13 +197,13 @@ class FormEditOrNewTrailer extends Component {
                     value={this.defaultIfEmpty(trailer_name)}
                     id={id}
                     required
+                    placeholder="Trailername"
 
                   />
                 </FormGroup>
                 </Col>
                 <Col>
                 <FormGroup>
-                  <Label for="trailer_url">Trailer URL:</Label>
                   <Input
                     type="text"
                     name="trailer_url"
@@ -212,6 +211,7 @@ class FormEditOrNewTrailer extends Component {
                     value={this.defaultIfEmpty(yt_code)}
                     id={id}
                     required
+                    placeholder="Trailer URL"
 
                   />
                 </FormGroup>

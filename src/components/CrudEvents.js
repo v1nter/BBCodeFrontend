@@ -42,7 +42,7 @@ class CrudEvents extends Component {
           events.map(event => (
             <tr key={event.id}>
               <td>{event.event_name}</td>
-              <td><input type="checkbox" checked={event.event_is_current}/></td>
+              <td><input type="checkbox" checked={event.event_is_current} readOnly/></td>
               <td><a href={"https://forum.gamespodcast.de/posting.php?mode=edit&f=8&p=" + event.event_url_thread} target="_blank" rel="noreferrer">Link</a></td>
               <td><a href={"https://forum.gamespodcast.de/posting.php?mode=reply&f=8&t=" + event.event_url_posting} target="_blank" rel="noreferrer">Link</a></td>
               <td><a href={"https://imgur.com/a/" + event.event_album} target="_blank" rel="noreferrer">Zum Album</a></td>

@@ -114,13 +114,13 @@ class FormEditOrNewEvent extends React.Component {
       /*<Form onSubmit={this.props.events ? this.editEvent : this.createEvent}>*/
       <Form onSubmit={this.props.event ? this.editEvent : this.createEvent}>
         <FormGroup>
-          <Label for="event_name">Name:</Label>
           <Input
             type="text"
             name="event_name"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.event_name)}
             required
+            placeholder="Name"
           />
         </FormGroup>
 
@@ -137,24 +137,24 @@ class FormEditOrNewEvent extends React.Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="event_url_thread">URL Thread:</Label>
           <Input
             type="text"
             name="event_url_thread"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.event_url_thread)}
             required
+            placeholder="URL zum editieren des Hauptpostings"
           />
         </FormGroup>
 
           <FormGroup>
-            <Label for="event_url_posting">URL Posting:</Label>
             <Input
               type="text"
               name="event_url_posting"
               onChange={this.onChange}
               value={this.defaultIfEmpty(this.state.event_url_posting)}
               required
+              placeholder="URL zum posten von Delta"
             />
         </FormGroup>
         <Button color="success" type="Submit">Senden</Button>

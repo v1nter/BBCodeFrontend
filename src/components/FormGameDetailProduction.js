@@ -23,7 +23,7 @@ class FormGameDetailProduction extends React.Component {
       return (
         <Form>
           <FormGroup>
-            <Label for="game_production">Produktion:</Label>
+          <Label for="game_production">Produktion:</Label>
             <Select
               name="game_production"
               className="basic-multi-select"
@@ -31,6 +31,7 @@ class FormGameDetailProduction extends React.Component {
               defaultValue={this.defaultIfEmpty(defaultValue)}
               options={options}
               onChange={this.onChange}
+              placeholder="Produktion"
             />
           </FormGroup>
         </Form>

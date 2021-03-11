@@ -52,13 +52,13 @@ class FormNewGame extends React.Component {
 
       <Form onSubmit={this.createGame}>
         <FormGroup>
-          <Label for="game_name">Name:</Label>
           <Input
             type="text"
             name="game_name"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.game_name)}
             required
+            placeholder="Name"
           />
         </FormGroup>
 

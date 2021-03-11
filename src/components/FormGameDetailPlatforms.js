@@ -41,6 +41,7 @@ class FormGameDetailPlatforms extends React.Component {
               defaultValue={gameplatforms}
               options={allplatforms}
               onChange={this.onChange}
+              placeholder="Plattformen"
             />
           </FormGroup>
         </Form>
