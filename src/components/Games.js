@@ -6,6 +6,7 @@ import CrudGames from "./CrudGames"
 import ModalNewGame from "./ModalNewGame"
 import { GAMES } from "../constants";
 import Search from "./Search"
+import SearchReset from "./SearchReset"
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -28,7 +29,17 @@ class Games extends Component {
 
   onChangeSearch = e => {
     const search = e.target.value
-    this.setState({search: search}, this.getGames)
+    this.setState({search: search})
+  }
+
+  onSubmitSearchReset = e => {
+    e.preventDefault();
+    this.setState({search: ""}, this.getGames)
+  }
+
+  onSubmitSearch = e => {
+    e.preventDefault();
+    this.getGames()
   }
 
   getGames = () => {
@@ -61,7 +72,12 @@ class Games extends Component {
                   <Search
                   search={this.state.search}
                   onChangeSearch={this.onChangeSearch}
+                  onSubmitSearch={this.onSubmitSearch}
                   />
+                </Col>
+                <Col>
+                  <SearchReset
+                  onSubmitSearchReset={this.onSubmitSearchReset}/>
                 </Col>
                 <Col>
                   <ModalNewGame

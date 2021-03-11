@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Form, FormGroup, Input, Label } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 class Search extends Component {
 
@@ -11,21 +11,25 @@ class Search extends Component {
     return value === "" ? "" : value;
   };
 
+  onSubmit = e => {
+    this.props.onSubmitSearch(e)
+  }
+
     render() {
       return (
-
-        <Form>
-          <FormGroup>
-            <Input
-              type="text"
-              name="game_search"
-              onChange={this.onChange}
-              value={this.defaultIfEmpty(this.props.search)}
-              placeholder="Suche"
-              autoComplete="off"
-            />
-          </FormGroup>
-        </Form>
+  
+              <Form onSubmit={this.onSubmit}>
+                <FormGroup>
+                  <Input
+                    type="text"
+                    name="game_search"
+                    onChange={this.onChange}
+                    value={this.defaultIfEmpty(this.props.search)}
+                    placeholder="Suche"
+                    autoComplete="off"
+                  />
+                </FormGroup>
+                </Form>
 
       );
     }
