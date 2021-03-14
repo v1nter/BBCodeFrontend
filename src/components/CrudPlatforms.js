@@ -7,10 +7,6 @@ const PlatformsEnum = Object.freeze({"pc": "PC", "console": "Konsole", "vr": "VR
 
 class CrudPlatforms extends Component {
 
-  componentDidMount() {
-    //alert(this.props.platforms[1].platform_name);
-  }
-
   render() {
     const platforms = this.props.platforms;
     return(

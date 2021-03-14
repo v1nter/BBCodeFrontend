@@ -24,11 +24,11 @@ class Games extends Component {
 
     var copyGames = this.state.games
 
-    copyGames.filter(data => data.id == game.id)[0].game_needs_update =
-      !copyGames.filter(data => data.id == game.id)[0].game_needs_update
+    copyGames.filter(data => data.id === game.id)[0].game_needs_update =
+      !copyGames.filter(data => data.id === game.id)[0].game_needs_update
 
     this.setState({games: copyGames})
-    axios.put(GAMES + game.id, this.state.games.filter(data => data.id == game.id)[0])
+    axios.put(GAMES + game.id, this.state.games.filter(data => data.id === game.id)[0])
 
   }
 

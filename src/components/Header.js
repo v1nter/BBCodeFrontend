@@ -26,8 +26,8 @@ class Header extends Component {
                     </Link>
                   </td>
                   <td style={{width: "25%"}}>
-                    <Link to="/update/">
-                      <Button color="outline-dark" disabled style={{width: "100%"}}>Reihenupdate</Button>
+                    <Link to="/chainupdate/">
+                      <Button color="outline-dark" style={{width: "100%"}}>Reihenupdate</Button>
                     </Link>
                   </td>
                   <td style={{width: "25%"}}>

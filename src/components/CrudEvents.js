@@ -39,6 +39,13 @@ class CrudEvents extends Component {
             </td>
           </tr>
         ) : (
+          /*
+          ######################################################################
+          #
+          # Rotiere über alle vorhandenen Events und lege jeweils eine Zeile an
+          #
+          #####################################################################
+          */
           events.map(event => (
             <tr key={event.id}>
               <td>{event.event_name}</td>
@@ -60,6 +67,13 @@ class CrudEvents extends Component {
                   resetState={this.props.resetState}
                 />
               </td>
+              {/*
+                ###############################################################
+                #
+                # Delete-Button
+                #
+                ###############################################################
+                */}
               <td align="center">
                 <ModalDeleteEvents
                   id={event.id}

@@ -31,7 +31,6 @@ class FormBBCode extends Component {
   };
 
   getThread = () => {
-    //axios.get(EVENT_URL, {params: {event_is_current: true}}).then(res => this.setState( {event: res.data}));
     axios.get(EVENT_URL).then(res => this.setState( {event: res.data}));
   }
 

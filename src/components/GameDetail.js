@@ -18,6 +18,7 @@ class GameDetail extends React.Component {
   state = {
     game: null,
     allplatforms: null,
+    id: null
   };
 
   /*
@@ -31,7 +32,17 @@ class GameDetail extends React.Component {
   #############################################################################
   */
   getGame = () => {
-    axios.get(GAMES + this.props.match.params.id).then(res => this.setState({ game: res.data }));
+
+    if(this.props.ChainUpdate )
+    {
+      this.setState({id: this.props.ChainUpdateGame.id},
+        () => axios.get(GAMES + this.state.id).then(res => this.setState({ game: res.data })))
+
+    }
+    else {
+      this.setState({id: this.props.match.params.id},
+        () => axios.get(GAMES + this.state.id).then(res => this.setState({ game: res.data })))
+    }
   };
 
 
@@ -102,7 +113,20 @@ class GameDetail extends React.Component {
     this.setState({game: copyGame})
 
     axios.put(GAMES + this.state.game.id, this.state.game)
-    this.props.history.push('/');
+
+    if(this.props.ChainUpdate)
+    {
+      this.props.nextIndex()
+    }
+    else
+    {
+      this.props.history.push('/');
+    }
+  }
+
+  skip = e => {
+    e.preventDefault();
+    this.props.nextIndex()
   }
 
   onChangeDescription = e => {
@@ -239,7 +263,12 @@ class GameDetail extends React.Component {
                 <Button color="success" onClick={this.saveAll} style={{ marginTop: "16px", marginLeft: "10px"}}>
                   Speichern
                 </Button>
-
+              </td>
+              <td style={{width: "15%"}}>
+              <Button color="danger" onClick={this.skip}
+              style={{ marginTop: "16px", marginLeft: "10px", display: this.props.ChainUpdate ? "block" : "none"}}>
+                Überspringen
+              </Button>
               </td>
             </tr>
             </tbody>
@@ -275,7 +304,7 @@ class GameDetail extends React.Component {
                     */}
                   <td style={{width: "100%"}}>
                     <GameDetailTrailer
-                    game_id={this.props.match.params.id}
+                    game_id={this.state.id}
                      get_yt_code={this.get_yt_code}
                     />
                   </td>

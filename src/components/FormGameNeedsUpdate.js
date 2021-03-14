@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 import { Form, FormGroup, Button } from "reactstrap";
-import { GAMES } from "../constants";
-import axios from "axios";
 
-axios.defaults.xsrfCookieName = 'csrftoken'
-axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 class FormGameNeedsUpdate extends Component {
 

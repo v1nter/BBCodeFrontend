@@ -10,7 +10,7 @@ class CrudGames extends Component {
   /*
   #############################################################################
   #
-  # Wird immer beim laden aufgerufen. Eignet sich daher gut, um mit alert()
+  # componentDidMount immer beim laden aufgerufen. Eignet sich daher gut, um mit alert()
   # zu überprüfen, welche Daten übergeben wurden!
   #
   #############################################################################
@@ -20,6 +20,15 @@ class CrudGames extends Component {
   }
 
   get_resized_keyart(url) {
+
+    /*
+    ###########################################################################
+    #
+    # URL zum Keyart wird übergeben und gegen URL zu kleinerem Keyart
+    # ausgetauscht
+    #
+    ###########################################################################
+    */
 
 
     var pos = url.lastIndexOf(".")
@@ -55,6 +64,13 @@ class CrudGames extends Component {
           </tr>
         ) : (
           games.map(game => (
+            /*
+            ###################################################################
+            #
+            # Schleife über alle Spiele
+            #
+            ###################################################################
+            */
 
             <tr key={game.id}>
               <td><img src={this.get_resized_keyart(game.game_keyart)} alt="" width="160" height="90"/></td>
@@ -72,7 +88,7 @@ class CrudGames extends Component {
               {/*
               #################################################################
               #
-              # Events ist ebenfalls ein Array => Ebenfalls Schleife
+              # Events ist ein Array => Schleife über alle Events
               #
               #################################################################
               */}

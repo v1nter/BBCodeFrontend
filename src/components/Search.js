@@ -15,6 +15,8 @@ class Search extends Component {
     this.props.onSubmitSearch(e)
   }
 
+  handleFocus = (event) => event.target.select();
+
     render() {
       return (
 
@@ -27,6 +29,7 @@ class Search extends Component {
                     value={this.defaultIfEmpty(this.props.search)}
                     placeholder="Suche"
                     autoComplete="off"
+                    onFocus={this.handleFocus}
                   />
                 </FormGroup>
                 </Form>
