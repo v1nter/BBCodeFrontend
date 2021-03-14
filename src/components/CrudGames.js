@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Table, Button } from "reactstrap";
 import ModalDeleteGames from "./ModalDeleteGames";
 import { Link } from "react-router-dom";
+import FormGameNeedsUpdate from "./FormGameNeedsUpdate"
 
 
 class CrudGames extends Component {
@@ -36,10 +37,9 @@ class CrudGames extends Component {
       <Table>
       <thead>
         <tr>
-          <th>Keyart</th>
-          <th>Spiel</th>
-          <th>Release</th>
-          <th>Plattformen</th>
+          <th style={{width: "160px"}}>Keyart</th>
+          <th style={{width: "200px"}}>Spiel</th>
+          <th style={{width: "100px"}}>Update</th>
           <th>Events</th>
           <th>Löschen</th>
         </tr>
@@ -58,27 +58,15 @@ class CrudGames extends Component {
 
             <tr key={game.id}>
               <td><img src={this.get_resized_keyart(game.game_keyart)} alt="" width="160" height="90"/></td>
-              <td><Link to={"/games/" + game.id}>
-                <Button color="info" style={{width: "100%"}}>{game.game_name}</Button>
-              </Link>
-              </td>
-              <td>{game.game_release_date}</td>
               <td>
-
-              {/*
-              #################################################################
-              #
-              # game.games_platform ist ein Array, daher muss zusätzlich
-              # eine Schleife genutzt werden
-              #
-              #################################################################
-              */}
-
-                {game.game_platforms.map( platform => (
-                    platform + ", "
-                    )
-                )}
-
+                <Link to={"/games/" + game.id}>
+                  <Button color="info" style={{width: "100%"}}>{game.game_name}</Button>
+                </Link>
+              </td>
+              <td>
+                <FormGameNeedsUpdate
+                  game={game}
+                  GameNeedsUpdate={this.props.GameNeedsUpdate}/>
               </td>
 
               {/*
@@ -97,7 +85,7 @@ class CrudGames extends Component {
                 )}
               </td>
 
-              <td align="center">
+              <td style={{width: "100px"}}>
                 <ModalDeleteGames
                   id={game.id}
                   resetState={this.props.resetState}

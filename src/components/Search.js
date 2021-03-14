@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Form, FormGroup, Input } from "reactstrap";
 
 class Search extends Component {
 
@@ -17,7 +17,7 @@ class Search extends Component {
 
     render() {
       return (
-  
+
               <Form onSubmit={this.onSubmit}>
                 <FormGroup>
                   <Input

@@ -96,6 +96,11 @@ class GameDetail extends React.Component {
 
   saveAll = e => {
     e.preventDefault();
+
+    var copyGame = this.state.game
+    copyGame.game_needs_update = false
+    this.setState({game: copyGame})
+
     axios.put(GAMES + this.state.game.id, this.state.game)
     this.props.history.push('/');
   }

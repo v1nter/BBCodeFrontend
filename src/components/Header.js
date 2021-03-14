@@ -17,11 +17,6 @@ class Header extends Component {
                     <img src="/Icon.bmp" alt=""/><h1>BBCode Generator</h1>
                   </th>
                 </tr>
-                <tr>
-                  <th colSpan = "4" className="text-center">
-                    Hier kommt eine Searchbar hin
-                  </th>
-                </tr>
               </thead>
               <tbody>
                 <tr>

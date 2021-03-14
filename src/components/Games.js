@@ -14,10 +14,23 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 class Games extends Component {
 
   state = {
-    games: [],
+    //games: [],
+    games: null,
     imgur: null,
     search: "",
   };
+
+  GameNeedsUpdate = (game) => {
+
+    var copyGames = this.state.games
+
+    copyGames.filter(data => data.id == game.id)[0].game_needs_update =
+      !copyGames.filter(data => data.id == game.id)[0].game_needs_update
+
+    this.setState({games: copyGames})
+    axios.put(GAMES + game.id, this.state.games.filter(data => data.id == game.id)[0])
+
+  }
 
   componentDidMount() {
     this.resetState();
@@ -48,6 +61,7 @@ class Games extends Component {
 
   resetState = () => {
     this.getGames();
+    this.forceUpdate()
   };
 
 
@@ -89,6 +103,7 @@ class Games extends Component {
                   <CrudGames
                     games={this.state.games}
                     resetState={this.resetState}
+                    GameNeedsUpdate={this.GameNeedsUpdate}
                   />
                 </Col>
               </Row>

@@ -2,9 +2,8 @@
 var api = "https://bbcodebackend.herokuapp.com"
 
 if(process.env.REACT_APP_HOST === "LOCAL") {
-  var api = "http://localhost:8000"
+  api = "http://localhost:8000"
 }
-
 
 export const EVENT_URL = `${api}/bbcapi/events/`;
 export const IMGUR_GET = `${api}/bbcapi/imgurget/`;

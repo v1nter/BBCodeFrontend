@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Form, FormGroup, Input, Label, Col, Container, Row, Button } from "reactstrap";
+import { Form, FormGroup, Input, Col, Container, Row, Button } from "reactstrap";
 import { TRAILER, GAMES } from "../constants";
 import axios from "axios";
 

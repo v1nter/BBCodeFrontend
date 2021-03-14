@@ -16,7 +16,8 @@ class FormGameDetailProduction extends React.Component {
 
     const options = [{label: 'AAA', value: 'AAA'},
                      {label: 'AA', value: 'AA'},
-                     {label: 'Indie', value: 'Indie'}];
+                     {label: 'Indie', value: 'Indie'},
+                     {label: 'Retro', value: 'Retro'}];
 
     const defaultValue = [{label: this.props.game.game_production, value: this.props.game.game_production}]
 
