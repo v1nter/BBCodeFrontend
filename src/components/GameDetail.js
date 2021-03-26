@@ -286,14 +286,9 @@ class GameDetail extends React.Component {
                       onClick={this.saveAll}
                       style={{ marginTop: "16px",
                                marginLeft: "10px",
-                               width: "100%",
-                               display: this.props.ChainUpdate ? "none" : "block",
+                               width: "100%"
                                }}>
                       Speichern/RU
-              </Button>
-              <Button color="outline-danger" onClick={this.skip}
-              style={{ marginTop: "16px", marginLeft: "10px", display: this.props.ChainUpdate ? "block" : "none"}}>
-                Überspringen
               </Button>
               </td>
             </tr>
