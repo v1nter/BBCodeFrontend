@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { GAMES } from "../constants";
 import GameDetail from "./GameDetail"
-import { Form, Col, Container, Row, Button} from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import Header from "./Header"
 
 class ChainUpdate extends Component {

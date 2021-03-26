@@ -109,7 +109,17 @@ class GameDetail extends React.Component {
     e.preventDefault();
 
     var copyGame = this.state.game
-    copyGame.game_needs_update = false
+
+    /*
+    ###########################################################################
+    #
+    # Je nachdem welcher Button gedrückt wird, bleibt ein Spiel im
+    # Reihenupdate (e.target.value = true) oder wird herausgenommen
+    # (e.target.value = false)
+    #
+    ###########################################################################
+    */
+    copyGame.game_needs_update = e.target.value
     this.setState({game: copyGame})
 
     axios.put(GAMES + this.state.game.id, this.state.game)
@@ -260,12 +270,28 @@ class GameDetail extends React.Component {
               </td>
               <td style={{width: "15%"}}>
 
-                <Button color="success" onClick={this.saveAll} style={{ marginTop: "16px", marginLeft: "10px"}}>
-                  Speichern
-                </Button>
+                      <Button color="success"
+                              value={false}
+                              onClick={this.saveAll}
+                              style={{ marginTop: "16px",
+                                       marginLeft: "10px",
+                                       width: "100%"}}>
+                        Speichern
+                      </Button>
+
               </td>
               <td style={{width: "15%"}}>
-              <Button color="danger" onClick={this.skip}
+              <Button color="outline-success"
+                      value={true}
+                      onClick={this.saveAll}
+                      style={{ marginTop: "16px",
+                               marginLeft: "10px",
+                               width: "100%",
+                               display: this.props.ChainUpdate ? "none" : "block",
+                               }}>
+                      Speichern/RU
+              </Button>
+              <Button color="outline-danger" onClick={this.skip}
               style={{ marginTop: "16px", marginLeft: "10px", display: this.props.ChainUpdate ? "block" : "none"}}>
                 Überspringen
               </Button>
