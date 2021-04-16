@@ -13,3 +13,4 @@ export const GAMES = `${api}/bbcapi/games/`;
 export const TRAILER = `${api}/bbcapi/trailer/`;
 export const KEYART = `${api}/bbcapi/keyart/`;
 export const BBCODE = `${api}/bbcapi/bbcode/`;
+export const BASE = `${api}/bbcapi/base/`;

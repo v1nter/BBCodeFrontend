@@ -5,8 +5,10 @@ import Header from "./Header";
 import CrudGames from "./CrudGames"
 import ModalNewGame from "./ModalNewGame"
 import { GAMES } from "../constants";
+import { BASE } from "../constants";
 import Search from "./Search"
 import SearchReset from "./SearchReset"
+import FormShowHiddenGames from "./FormShowHiddenGames"
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -18,6 +20,7 @@ class Games extends Component {
     games: null,
     imgur: null,
     search: "",
+    base: null,
   };
 
   GameNeedsUpdate = (game) => {
@@ -50,6 +53,16 @@ class Games extends Component {
     this.setState({search: ""}, this.getGames)
   }
 
+  onChangeShowHiddenGames = e => {
+    
+    var copyBase = this.state.base
+    copyBase[0].show_hidden_games = !copyBase[0].show_hidden_games
+    this.setState({base: copyBase})
+
+    axios.put(BASE + this.state.base[0].id, this.state.base[0])
+
+  }
+
   onSubmitSearch = e => {
     e.preventDefault();
     this.getGames()
@@ -59,15 +72,21 @@ class Games extends Component {
     axios.get(GAMES, { params: {delta: false, search: this.state.search}}).then(res => this.setState({ games: res.data }));
   };
 
+  getBase = () => {
+
+    axios.get(BASE).then(res => this.setState({ base: res.data }));
+  };
+
   resetState = () => {
     this.getGames();
+    this.getBase();
     this.forceUpdate()
   };
 
 
   render() {
 
-        if(!this.state.games)
+        if(!this.state.games || !this.state.base)
         {
           return null
         }
@@ -92,6 +111,12 @@ class Games extends Component {
                 <Col>
                   <SearchReset
                   onSubmitSearchReset={this.onSubmitSearchReset}/>
+                </Col>
+                <Col>
+                  <FormShowHiddenGames
+                  showhidden={this.state.base[0].show_hidden_games}
+                  onChangeShowHiddenGames={this.onChangeShowHiddenGames}
+                  />
                 </Col>
                 <Col>
                   <ModalNewGame
