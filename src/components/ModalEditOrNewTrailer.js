@@ -55,6 +55,7 @@ class ModalEditOrNewTrailer extends Component {
                 game={this.props.game}
                 trailer={this.props.trailer}
                 get_yt_code={this.props.get_yt_code}
+                onChangeTrailer={this.props.onChangeTrailer}
 
 
                 />

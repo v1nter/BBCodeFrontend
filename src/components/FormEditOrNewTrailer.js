@@ -146,6 +146,8 @@ class FormEditOrNewTrailer extends Component {
          this.props.resetState();
          this.props.toggle();
      });
+
+     this.props.onChangeTrailer();
   }
 
   render() {

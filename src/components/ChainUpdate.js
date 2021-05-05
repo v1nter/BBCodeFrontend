@@ -28,7 +28,6 @@ class ChainUpdate extends Component {
     #
     ###########################################################################
     */
-    console.log("getGames")
     axios.get(GAMES, { params: {needs_update: "true"} }).then(res => this.setState( {games: res.data},
       () => this.setState({maxindex: this.state.games.length}, console.log("Maxindex: " + this.state.maxindex))));
 

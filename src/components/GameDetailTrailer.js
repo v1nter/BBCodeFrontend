@@ -55,6 +55,7 @@ class GameDetailTrailer extends Component {
             resetState={this.resetState}
             game={this.state.game}
             get_yt_code={this.props.get_yt_code}
+            onChangeTrailer={this.props.onChangeTrailer}
             />
           </td>
         </tr>
@@ -85,6 +86,7 @@ class GameDetailTrailer extends Component {
                   game={this.state.game}
                   trailer={trailer}
                   get_yt_code={this.props.get_yt_code}
+                  onChangeTrailer={this.props.onChangeTrailer}
                   />
 
                 </td>

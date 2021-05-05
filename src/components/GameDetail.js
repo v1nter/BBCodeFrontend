@@ -18,7 +18,8 @@ class GameDetail extends React.Component {
   state = {
     game: null,
     allplatforms: null,
-    id: null
+    id: null,
+    gameBeforeSave: null,
   };
 
   /*
@@ -49,6 +50,12 @@ class GameDetail extends React.Component {
   getAllPlatforms = () => {
     axios.get(PLATFORM).then(res => this.setState({allplatforms: res.data}))
   };
+
+  onChangeTrailer = e => {
+    const copyGame = this.state.game
+    copyGame.DeltaYesNo = true
+    this.setState({game: copyGame})
+  }
 
   onChangeRelease = e => {
 
@@ -105,8 +112,11 @@ class GameDetail extends React.Component {
     this.getAllPlatforms()
   };
 
+
   saveAll = e => {
     e.preventDefault();
+
+    //this.getDelta();
 
     var copyGame = this.state.game
 
@@ -325,8 +335,9 @@ class GameDetail extends React.Component {
                     */}
                   <td style={{width: "100%"}}>
                     <GameDetailTrailer
-                    game_id={this.state.id}
-                     get_yt_code={this.get_yt_code}
+                      game_id={this.state.id}
+                      get_yt_code={this.get_yt_code}
+                      onChangeTrailer={this.onChangeTrailer}
                     />
                   </td>
                 </tr>
