@@ -45,7 +45,8 @@ class Games extends Component {
 
   onChangeSearch = e => {
     const search = e.target.value
-    this.setState({search: search}, this.getGames)
+    this.setState({search: search})
+    //this.setState({search: search}, this.getGames)
   }
 
   onSubmitSearchReset = e => {
@@ -54,7 +55,7 @@ class Games extends Component {
   }
 
   onChangeShowHiddenGames = e => {
-    
+
     var copyBase = this.state.base
     copyBase[0].show_hidden_games = !copyBase[0].show_hidden_games
     this.setState({base: copyBase})
